@@ -9,7 +9,7 @@ export default {
   theme: {
     container: {
       center: true, // Konteynerin mərkəzə düzülməsi
-      padding: "1rem", // Daxili boşluq (padding)
+      padding: "4rem", // Daxili boşluq (padding)
       screens: {
         sm: "640px",
         md: "768px",

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import '../app/globals.css'
+import "./globals.css";
+import Footer from "../components/footer";
+import Header from "../components/header";
 
 export const metadata: Metadata = {
-  title: "Elxan Meherremli",
-  description: "Fuad",
+  title: "Elxan Meherremli Portfolio",
+  description: "ELxan Meherremli Portfolio",
 };
 
 export default function RootLayout({
@@ -15,12 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-screen overflow-scroll border-[22px] hide-scrollbar border-[#EDEDED]">
-        <div>
-          <Header />
-
-          <div>{children}</div>
-
+      <body>
+        <div className="h-screen overflow-scroll border-[22px] hide-scrollbar border-[#EDEDED] rounded-b-3xl">
+          <Header/>
+          {children}
           <Footer />
         </div>
       </body>

@@ -5,13 +5,13 @@ const Footer = () => {
   return (
     <footer className=" w-full h-40 bg-[#EDEDED] flex flex-col items-center gap-3 pt-10">
       <div>
-        <h4>
+        <h4 className="flex gap-2">
           <span>© Copyright 2025 | </span>
-          <Link href="#" className="text-[#e09a0e]">
+          <Link href="#" className="text-[#e09a0e] border border-b-[#e09a0e]">
             Kalium Theme
           </Link>
           <span>by</span>
-          <Link href="#" className="text-[#e09a0e]">
+          <Link href="#" className="text-[#e09a0e] border border-b-[#e09a0e]">
             Laborator
           </Link>
         </h4>
