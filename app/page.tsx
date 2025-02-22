@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function HomePage() {
   return (
-    <div className='container mx-auto'>
+    <div className='container'>
       <Header/>
     </div>
   )
