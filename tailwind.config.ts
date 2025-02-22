@@ -3,13 +3,13 @@ import type { Config } from "tailwindcss";
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",    
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     container: {
       center: true, // Konteynerin mərkəzə düzülməsi
-      padding: "2rem", // Daxili boşluq (padding)
+      padding: "1rem", // Daxili boşluq (padding)
       screens: {
         sm: "640px",
         md: "768px",

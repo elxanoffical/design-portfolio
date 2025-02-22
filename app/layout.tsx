@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import '../app/globals.css'
 
 export const metadata: Metadata = {
-  title: "Elxan Meherremli Portfolio",
-  description: "ELxan Meherremli Portfolio",
+  title: "Elxan Meherremli",
+  description: "Fuad",
 };
 
 export default function RootLayout({
@@ -15,7 +16,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-screen overflow-scroll border-[22px] hide-scrollbar border-[#EDEDED]">
-         <div> {children}</div>
+        <div>
+          <Header />
+
+          <div>{children}</div>
+
+          <Footer />
+        </div>
       </body>
     </html>
   );
