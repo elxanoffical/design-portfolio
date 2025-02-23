@@ -1,88 +1,94 @@
+
+
+"use client";
+
+import { useEffect, useState } from "react";
+
 import React from "react";
-import NavLink from "next/link";
+import Navlink from "next/link";
 
-export default function HomePage() {
-  const cards = [
-    {
-      titile: "People",
-      category: "Album Covers",
-    },
-    {
-      titile: "Adestra",
-      category: "Print",
-    },
-    {
-      titile: "Desk Concept",
-      category: "Furniture",
-    },
-    {
-      titile: "Multi Color",
-      category: "Logo",
-    },
-    {
-      titile: "Verein",
-      category: "Furniture",
-    },
-    {
-      titile: "Ethics for Design",
-      category: "Print",
-    },
-  ];
+
+
+interface Project {
+  _id: string;
+  title: string;
+  subtitle: string;
+  description: string
+}
+
+export default function Home() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await fetch("/api/projects");
+        if (res.ok) {
+          const data = await res.json();
+          setProjects(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch projects:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+  if (loading) return <p>Loading...</p>;
+
+  
+if (projects.length == 0) return <p>No projects found.</p>;
   return (
-    <section>
-      <div className="container">
-        <h2 className="font-medium text-[26px] text-[#242321] mt-[50px] mb-[3px]">
-          Portfolio
-        </h2>
-        <div className="flex flex-col lg:flex-row lg items-center lg:justify-between gap-[24px]">
-          <p className="font-normal text-[16px] text-[#666666]">
-            My everyday work is presented here, <br />
-            for more check out my portfolio on Behance.
-          </p>
-          <nav className="flex items-center gap-[17px]">
-            <NavLink href={"/all"} className="text-[16px] text-[#666666]">
-              All
-            </NavLink>
-            <NavLink
-              href={"/all"}
-              className="text-[16px] text-[#666666] border-b-[1px] border-[#ca8b0d]"
-            >
-              Furniture
-            </NavLink>
-            <NavLink href={"/all"} className="text-[16px] text-[#666666]">
-              Logo
-            </NavLink>
-            <NavLink href={"/all"} className="text-[16px] text-[#666666]">
-              People
-            </NavLink>
-            <NavLink href={"/all"} className="text-[16px] text-[#666666]">
-              Print
-            </NavLink>
-          </nav>
+    <>
+      <section className="">
+        <div className="container ">
+          <h2 className="font-medium text-[26px] text-[#242321] mt-[50px] mb-[8px]">
+            Portfolio
+          </h2>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-[24px]">
+            <p className="text-[#666666] text-[16px]">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br />
+              Perferendis, consequuntur voluptatibus accusamus
+            </p>
+            <nav className="flex gap-4 items-center">
+              <Navlink
+                className="text-[16px]  text-[#666666] active:border-b-[1px] active:border-[#ca8b0d]"
+                href="/all"
+              >
+                All
+              </Navlink>
+              <Navlink className="text-[16px]  text-[#666666]" href="/logo">
+                Logo
+              </Navlink>
+            </nav>
+          </div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px] py-[40px]">
-          {cards.map((card, index) => {
+        <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px] py-[40px]">
+        
+          {projects.map((card, index) => {
             return (
-              <div key={index} className="">
-                <div className=" relative mb-2 h-auto md:h-[300px]">
+              <div key={index} className="cursor-pointer">
+                <div className="relative h-auto md:h-[300px]">
                   <img
-                    src={"/cardImg.jpg"}
-                    alt=""
                     className="w-full h-full object-cover"
+                    src="/cardImg.jpg"
+                    alt=""
                   />
-                  <div className="absolute w-[90%] h-[90%] bg-[#e09a0ee6] top-[50%] left-[50%] 
-                  translate-x-[-50%] translate-y-[-50%] opacity-0 hover:opacity-100 transition-all duration-500"></div>
+                  <div className="absolute w-[90%] h-[90%] bg-[#e09a0ee6] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] opacity-0 hover:opacity-100 transition duration-500"></div>
                 </div>
-                <h2 className="font-medium text-[20px] text-[#242321]">
-                  {card.titile}
+                <h2 className="font-medium text-[20px] mt-2 text-[#242321]">
+                  {card.title}
                 </h2>
-                <p className=" text-[16px] text-[#666666]">{card.category}</p>
+                <p className="text-[16px] text-[#666666]">{card.subtitle}</p>
+                <p className="text-[16px] text-[#666666]">{card.description}</p>
               </div>
             );
           })}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
