@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -7,13 +5,11 @@ import { useEffect, useState } from "react";
 import React from "react";
 import Navlink from "next/link";
 
-
-
 interface Project {
   _id: string;
   title: string;
   subtitle: string;
-  description: string
+  description: string;
 }
 
 export default function Home() {
@@ -39,8 +35,7 @@ export default function Home() {
   }, []);
   if (loading) return <p>Loading...</p>;
 
-  
-if (projects.length == 0) return <p>No projects found.</p>;
+  if (projects.length == 0) return <p>No projects found.</p>;
   return (
     <>
       <section className="">
@@ -67,7 +62,6 @@ if (projects.length == 0) return <p>No projects found.</p>;
           </div>
         </div>
         <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px] py-[40px]">
-        
           {projects.map((card, index) => {
             return (
               <div key={index} className="cursor-pointer">

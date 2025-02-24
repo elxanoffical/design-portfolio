@@ -24,7 +24,7 @@ export default function AdminPanel() {
       setMessage("Project successfully created!");
       setTitle("");
       setSubtitle("");
-      setDescription("")
+      setDescription("");
     } else {
       setMessage("Error creating Project.");
     }

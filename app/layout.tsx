@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="h-screen overflow-scroll border-[10px] md:border-[20px] hide-scrollbar border-[#EDEDED] rounded-b-3xl">
-          <Header/>
+          <Header />
           {children}
           <Footer />
         </div>
