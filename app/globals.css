@@ -13,3 +13,19 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+.container{
+  padding: 0
+}
+
+@media (min-width: 320px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 3rem;
+  }
+}
