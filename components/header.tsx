@@ -4,7 +4,7 @@ import logo from "../app/assets/image/dp.png";
 
 export default function Header() {
   return (
-    <header className="flex items-center container justify-between py-[20px]">
+    <header className="flex items-center container justify-between py-[50px]">
       <Image
         src={logo}
         alt="logo"
