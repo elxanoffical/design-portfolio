@@ -20,7 +20,7 @@ body {
 }
 
 .container {
-  padding: 0
+  padding: 3rem
 }
 
 @media (min-width: 320px) {
