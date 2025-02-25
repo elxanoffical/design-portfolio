@@ -29,22 +29,36 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
-            <form className="border border-black w-[783px] flex flex-col gap-10" action="">
-              <div className="flex items-center gap-7">
-                <div className="flex items-center border-b  w-[50%]">
-                  <label htmlFor="">Name.</label>
-                  <input className=" outline-none" type="text" />
-                </div>
-                <div className="flex items-center border-b  w-[50%]">
-                  <label htmlFor="">Email.</label>
-                  <input className=" outline-none" type="text" />
-                </div>
+          <form
+            className="border border-black w-[783px] flex flex-col gap-10"
+            action=""
+          >
+            <div className="flex items-center gap-7">
+              <div className="flex items-center border-b  w-[50%]">
+                <label className="text-[16px] text-[#666666]" htmlFor="">
+                  Name.
+                </label>
+                <input className=" outline-none" type="text" />
               </div>
-              <div>
-                <label htmlFor="">Message.</label>
-                <input className="border outline-none" type="textarea" />
+              <div className="flex items-center border-b  w-[50%]">
+                <label className="text-[16px] text-[#666666]" htmlFor="">
+                  Email.
+                </label>
+                <input className=" outline-none" type="text" />
               </div>
-            </form>
+            </div>
+            <div>
+              <label className="text-[16px] text-[#666666]" htmlFor="">
+                Message.
+              </label>
+              <textarea
+              rows={5}
+                name="textarea"
+                className="w-full  border-b-2 resize-none outline-none"
+                placeholder="Message..."
+              ></textarea>
+            </div>
+          </form>
         </div>
       </div>
     </section>
