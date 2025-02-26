@@ -81,6 +81,16 @@ export default function ContactPage() {
                 className="w-full  border-b-2 resize outline-none"
               ></textarea>
             </div>
+
+            <div className="border flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <input type="checkbox" className="h-4 w-4" name="" id="" />
+                <h2 className="text-[16px] font-normal text-[#666]">
+                  I’ve read and accept the <span className="text-[#E09A0E] border-b border-b-yellow-500">terms & conditions</span> *
+                </h2>
+              </div>
+              <button className="py-[6px] px-3 text-[16px] font-normal text-white bg-[#E09A0E] rounded">Send Message</button>
+            </div>
           </form>
         </div>
       </div>
